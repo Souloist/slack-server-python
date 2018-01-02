@@ -1,0 +1,6 @@
+DEBUG = True
+CSFR_ENABLED = True
+SECRET_KEY = "rustle"
+
+SQLALCHEMY_DATABASE_URI = "postgresql://localhost/slack"
+SQLALCHEMY_TRACK_MODIFICATIONS = False
