@@ -1,4 +1,8 @@
-from sqlalchemy import Column, Integer, Text
+from sqlalchemy import (
+    Column,
+    Integer,
+    Text,
+)
 from server.models.meta import Base
 
 

@@ -1,5 +1,4 @@
 from sqlalchemy import (
-    Boolean,
     Column,
     Integer,
     ForeignKey,
@@ -8,17 +7,20 @@ from sqlalchemy import (
 from server.models.meta import Base
 
 
-class Channel(Base):
-    __tablename__ = "channels"
+class Member(Base):
+    __tablename__ = "members"
 
     id = Column(Integer, primary_key=True)
-    name = Column(Text, nullable=False)
     team_id = Column(
         Text,
         ForeignKey("teams.id", ondelete="cascade"),
         nullable=False,
     )
-    is_private = Column(Boolean, nullable=False, server_default="f", default=False)
+    user_id = Column(
+        Text,
+        ForeignKey("users.id", ondelete="cascade"),
+        nullable=False,
+    )
 
     def __repr__(self):
-        return "<Channel {}>".format(self.name)
+        return "<Member {}>".format(self.id)
