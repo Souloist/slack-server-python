@@ -4,7 +4,7 @@ from sqlalchemy import (
     ForeignKey,
     Text,
 )
-from server.models.meta import Base
+from server.model.meta import Base
 
 
 class Team(Base):

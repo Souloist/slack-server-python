@@ -3,7 +3,7 @@ from sqlalchemy import (
     Integer,
     ForeignKey,
 )
-from server.models.meta import Base
+from server.model.meta import Base
 
 
 class Member(Base):

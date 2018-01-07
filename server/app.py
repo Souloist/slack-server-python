@@ -2,13 +2,8 @@ import click
 from flask import Flask
 from flask_graphql import GraphQLView
 
-from server.models.meta import Base, engine, session
-
-from server.models.channel import Channel
-from server.models.member import Member
-from server.models.messages import Message
-from server.models.team import Team
-from server.models.user import User
+from server import model
+from server.model.meta import Base, engine, session
 
 from server.schema import schema
 
@@ -35,11 +30,11 @@ def initdb(drop):
 
     if drop:
         Base.metadata.drop_all(tables=[
-            Channel.__table__,
-            Member.__table__,
-            Message.__table__,
-            Team.__table__,
-            User.__table__,
+            model.Channel.__table__,
+            model.Member.__table__,
+            model.Message.__table__,
+            model.Team.__table__,
+            model.User.__table__,
         ])
 
     Base.metadata.create_all()
