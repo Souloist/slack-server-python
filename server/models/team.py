@@ -13,7 +13,7 @@ class Team(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
     owner = Column(
-        Text,
+        Integer,
         ForeignKey("users.id", ondelete="cascade"),
         nullable=False,
     )

@@ -14,7 +14,7 @@ class Channel(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
     team_id = Column(
-        Text,
+        Integer,
         ForeignKey("teams.id", ondelete="cascade"),
         nullable=False,
     )

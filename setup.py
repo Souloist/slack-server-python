@@ -3,10 +3,10 @@ from setuptools import find_packages, setup
 third_party_dependencies = (
     "Flask",
     "flask-GraphQL",
+    "graphene_sqlalchemy",
     "psycopg2",
     "SQLAlchemy",
     "requests",
-    "graphene_sqlalchemy",
 )
 
 tests_require = (

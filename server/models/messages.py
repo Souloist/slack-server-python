@@ -13,14 +13,14 @@ class Message(Base):
     id = Column(Integer, primary_key=True)
     text = Column(Text, nullable=False)
     user_id = Column(
-        Text,
+        Integer,
         ForeignKey("users.id", ondelete="cascade"),
         nullable=False,
     )
 
     channel_id = Column(
-        Text,
-        ForeignKey("channel.id", ondelete="cascade"),
+        Integer,
+        ForeignKey("channels.id", ondelete="cascade"),
         nullable=False,
     )
 
