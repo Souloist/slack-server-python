@@ -2,6 +2,7 @@ import graphene
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyObjectType
 
+from server.model.meta import session
 from server import model as db_model
 
 
@@ -40,3 +41,4 @@ class Query(graphene.ObjectType):
 
 
 schema = graphene.Schema(query=Query)
+schema.execute(context_value={'session': session})
